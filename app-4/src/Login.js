@@ -1,39 +1,40 @@
 import React, { Component } from 'react'
 
 class Login extends Component {
-    constructor() {
-      super()
+  constructor() {
+    super()
+
+    this.state = {
+      username: '',
+      password: ''
+    }
+  }
+
+  handleInput = (e) => {
+   
+    this.setState({
+      [e.target.name]: e.target.value
+    })
+  }
   
-      this.state = {
-        username: '',
-        password: ''
-      }
-      this.handleLogin = this.handleLogin.bind(this)
+  handleLoginAlert = () => {
+    alert(
+      `Username: ${this.state.username} | Password: ${this.state.password}`
+      )
     }
-
-    handleUsernameUpdate(name) {
-      this.setState({username: name})
-    }
-  
-    handlePasswordUpdate(pass) {
-      this.setState({password: pass})
-    }
-
-    handleLogin(){
-        alert(`Username: ${this.state.username} Password ${this.state.password}`)
-    }
-
+    
     render() {
-        console.log(this.props)
-        return(
-            <header>
-                <input onChange={ (e) => this.handleUsernameUpdate(e.target.value)}></input>
-                <input onChange={ (e) => this.handlePasswordUpdate(e.target.value)}></input>
-                <button onClick={ this.handleLogin}>Login</button>
-            </header>
+    
+    return (
+      <header>
+        <h1>Login Screen</h1>
+        <input placeholder='username' name='username' onChange={this.handleInput} />
+        <input placeholder='password' name='password' onChange={this.handleInput} />
+        <button onClick={this.handleLoginAlert}>Login</button>
+      </header>
 
-        )
-    }
+    )
+  }
 }
 
 export default Login;

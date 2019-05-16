@@ -1,20 +1,13 @@
 import React, { Component } from "react";
 import "./App.css";
-import Image from './Image'
-
+import Image from './Image';
 
 class App extends Component {
-  constructor(){
-    super()
-
-    this.state = {
-      image: 'http://shawnski.com/wp-content/uploads/2017/10/DSCF3482.jpg'
-  }
-  }
+  
   render() {
     return (
       <div className="App">
-        <Image myImage={this.state.image} />
+        <Image myImage={'http://shawnski.com/wp-content/uploads/2017/10/utah_adventure_photographer-1908.jpg'} />
       </div>
     );
   }

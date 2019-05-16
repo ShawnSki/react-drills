@@ -1,14 +1,12 @@
-import React, { Component } from "react"
+import React from 'react';
+import './index.css'
 
-class Image extends Component {
-    render() {
-        return (
-            <div>
-                <img src={this.props.myImage}></img>
-                <caption>Error 599</caption>
-            </div>
-        )
-    }
+function Image (props) {
+    return (
+        <div>
+            <img src={props.myImage}/>
+    </div>
+)
 }
 
 export default Image;
